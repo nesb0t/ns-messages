@@ -30,3 +30,15 @@ Example header-logo URL:
 3. Add the UI Config `PORTAL_PHP_FOOT_INCLUDE_PHP` to your NMS server with a value of `/var/www/html/messages.php`. It's important that you add limitations on this UI config so that it doesn't display for your end users as well. We set ours to be limited to the `Super User` role.
    1. You should never put something in this file that you don't want an end-user to see because there's nothing stopping them from just viewing the source code on this file. Again, there are better ways to do this than how I did it.
 4. Test and verify. Sometimes this override takes a while to start loading due to caching so I recommend using an incognito window or different browser than you normally use to test it. 
+
+# Example
+```javascript
+switch(domain) {
+	case 'Demo':
+		message_text = "This is an example of messages.php";
+		break;
+
+	default:
+		break;
+```
+![Demo](https://i.imgur.com/jDtYooP.png)
