@@ -25,6 +25,7 @@ Example header-logo URL:
 
 # Usage
 1. Upload messages.php to your nms server at /var/www/html. Set your permissions so that apache can read it.
+   1. I put the file directly on the server. It needs to be hosted on the server that your portal is hosted on. If your portal is hosted on multiple servers then you need to add the file to all of them. I don't know if the `PORTAL_PHP_FOOT_INCLUDE_PHP` UI config (set in step 3) supports hosting the file elsewhere so you only need one copy. I didn't have time to test it so I just did it this way. 
 2. Modify the switch portion (step 4) of the php file to add in messages you need to display.
 3. Add the UI Config `PORTAL_PHP_FOOT_INCLUDE_PHP` to your NMS server with a value of `/var/www/html/messages.php`. It's important that you add limitations on this UI config so that it doesn't display for your end users as well. We set ours to be limited to the `Super User` role.
    1. You should never put something in this file that you don't want an end-user to see because there's nothing stopping them from just viewing the source code on this file. Again, there are better ways to do this than how I did it.
